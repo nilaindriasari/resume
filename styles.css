@@ -10,11 +10,31 @@ body {
   text-align: center;
 }
 
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAHUlEQVQYV2P8/+K2L6OE6mYGKGCEMTAEYCoxVAAAXXUIBcd35+kAAAAASUVORK5CYII=) repeat;
+  background-color: #5E412F;
+  z-index: 100;
+}
+
+.wrapper {
+  margin-top: 8em;
+}
+
 @media screen and (min-width:48em) {
-  body,
-  #index .intro,
-  #portfolio .intro,
-  #contact .intro {
+  .sticky {
+    position: static;
+    background: none;
+  }
+  .wrapper {
+    margin-top: 0;
+  }
+}
+
+@media screen and (min-width:48em) {
+  body, #index .intro, #portfolio .intro, #contact .intro {
     font-size: 15px;
     text-align: left;
   }
@@ -100,8 +120,32 @@ img {
   width: 100%;
 }
 
-.techskills li span:hover {
+.html, .css, .js, .jquery, .ps {
+  position: absolute;
+  top: 0;
+  left: 0;
   background-color: #F0A830;
+  height: 18px;
+  width: 0;
+  transition: 1s;
+}
+
+.techskills span:hover .html, .techskills span:hover .css, .techskills span:hover .ps {
+  width: 100%;
+  height: 18px;
+  display: block;
+}
+
+.techskills span:hover .js {
+  width: 90%;
+  height: 18px;
+  display: block;
+}
+
+.techskills span:hover .jquery {
+  width: 75%;
+  height: 18px;
+  display: block;
 }
 
 
@@ -165,12 +209,13 @@ img {
   position: relative;
   overflow: hidden;
   margin: 0 5px 0 5px;
+  color: #FCEBB6;
 }
 
 .thumbs span {
   position: absolute;
   left: 0;
-  bottom: -70px;
+  bottom: 0;
   background: rgba(94, 65, 47, 0.7);
   width: 100%;
   text-align: center;
@@ -181,10 +226,10 @@ img {
 
 @media screen and (min-width:48em) {
   .thumbs span {
-    font-size: 12px;
+    font-size: 10px;
+    bottom: -70px;
   }
 }
-
 
 .thumbs a:hover span {
   bottom: 0;
