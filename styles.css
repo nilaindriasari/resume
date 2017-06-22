@@ -99,6 +99,20 @@ img {
   }
 }
 
+@media screen and (min-width:20em) {
+  .techskills span:hover {
+    height: 18px;
+  }
+
+  .html, .css, .js, .jquery, .ps {
+    height: 18px;
+  }
+  .techskills li {
+    height: 30px;
+    position: relative;
+  }
+}
+
 .techskills {
   list-style: none;
   padding: 0;
@@ -148,6 +162,23 @@ img {
   display: block;
 }
 
+
+.tabs {
+  background: none;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.tabs img {
+  display: block;
+}
+
+@media screen and (min-width:48em) {
+  .tabs {
+    justify-content: flex-start;
+  }
+}
 
 /* index page
 ------------------------------------------*/
